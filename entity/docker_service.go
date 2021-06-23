@@ -3,6 +3,6 @@ package entity
 
 
 type DockerImage struct {
-  Name string `json:"title"`
-  Id string `json:"id"`
+  RepoUrl string `json:"repo_url"`
+  FullName string `json:"full_name"`
 }
