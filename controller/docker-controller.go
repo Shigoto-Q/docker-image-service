@@ -2,8 +2,8 @@ package controller
 
 import (
   "github.com/gin-gonic/gin"
-  service "github.com/Shigoto-Q/docker_service/service"
-  entity "github.com/Shigoto-Q/docker_service/entity"
+  "github.com/Shigoto-Q/docker_service/service"
+  "github.com/Shigoto-Q/docker_service/entity"
 
 )
 type DockerController interface {
@@ -15,10 +15,15 @@ type controller struct {
   service service.DockerService
 }
 
-func New(service service.DockerService) {
+func New(service service.DockerService) DockerController {
+  return &controller{
+    service: service,
+  }
 }
 func (c *controller) Save(ctx *gin.Context) entity.DockerImage {
   var docker entity.DockerImage
+  ctx.BindJSON(&docker)
+  c.service.Save(docker)
   return docker
 
 }

@@ -1,7 +1,7 @@
 // Package j provides ...
 package service
 
-import entity "github.com/Shigoto-Q/docker_service/entity"
+import "github.com/Shigoto-Q/docker_service/entity"
 
 type DockerService interface {
   Save(entity.DockerImage) entity.DockerImage

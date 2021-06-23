@@ -1,5 +1,5 @@
 // Package j provides ...
-package main
+package entity
 
 
 type DockerImage struct {
