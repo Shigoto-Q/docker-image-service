@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  go-docker-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5050:5050"
+    networks:
+      - shigoto
+
+networks:
+  shigoto:
+    external:
+      name: shigoto_network
