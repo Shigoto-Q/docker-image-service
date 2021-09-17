@@ -34,7 +34,7 @@ jobs:
           docker tag shigoto_production_image_service ${{ secrets.DOCKERHUB_USERNAME }}/shigoto_production_image_service:${{ steps.vars.outputs.sha_short }}
       - name: Push Docker images
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/shigoto_production_result_service:${{ steps.vars.outputs.sha_short }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/shigoto_production_image_service:${{ steps.vars.outputs.sha_short }}
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
